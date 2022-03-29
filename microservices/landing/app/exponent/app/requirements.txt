@@ -1,0 +1,5 @@
+# Follow Task-0 subtask-0 to complete this file. Remove this comment if you think it is causing build issues.aiohttp==3.7.4.post0
+Flask==2.0.3
+Flask-RESTful==0.3.9
+requests==2.25.1
+
