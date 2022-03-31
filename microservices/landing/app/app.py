@@ -20,19 +20,20 @@ def index():
         flash(f'Enter number')
         flag=1
     if operation == 'add':
-        result=requests.get("http://10.14.142.123:5051/add/"+str(number_1)+"/"+str(number_2)).text
+        result=requests.get("http://addition:5051/add/"+str(number_1)+"/"+str(number_2),verify=False).text
     elif operation == 'minus':
-        result=requests.get("http://10.14.142.123:5052/subtract/"+str(number_1)+"/"+str(number_2)).text
+        result=requests.get("http://subtraction:5052/subtract/"+str(number_1)+"/"+str(number_2)).text
     elif operation == 'multiply':
-        result=requests.get("http://10.14.142.123:5053/multiply/"+str(number_1)+"/"+str(number_2)).text
+        result=requests.get("http://multiplication:5053/multiply/"+str(number_1)+"/"+str(number_2)).text
     elif operation == 'divide':
-        result=requests.get("http://10.14.142.123:5054/divide/"+str(number_1)+"/"+str(number_2)).text
+        result=requests.get("http://division:5054/divide/"+str(number_1)+"/"+str(number_2)).text
     elif operation == 'exponent':
-        result=requests.get("http://10.14.142.123:5055/expo/"+str(number_1)+"/"+str(number_2)).text
+        result=requests.get("http://exponent:5055/expo/"+str(number_1)+"/"+str(number_2)).text
     elif operation == 'greater_than':
-        result=requests.get("http://10.14.142.123:5056/grt/"+str(number_1)+"/"+str(number_2)).text
+        result=requests.get("http://greater_than:5056/grt/"+str(number_1)+"/"+str(number_2)).text
     elif operation == 'lesser_than':
-        result=requests.get("http://10.14.142.123:5057/lrt/"+str(number_1)+"/"+str(number_2)).text
+        result=requests.get("http://less_than:5057/lrt/"+str(number_1)+"/"+str(number_2)).text
+        
 
     if flag==0:
         flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
